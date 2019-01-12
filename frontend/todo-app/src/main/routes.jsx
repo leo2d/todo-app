@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router';
+import {Switch, Route, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import Todo from '../todo/todo';
 import About from '../about/about';
@@ -12,6 +12,6 @@ const Routes = props => (
             <Redirect from="*" to="/todos" />
         </Switch>
     </div>
-)
+);
 
 export default Routes;
