@@ -29,14 +29,13 @@ export default class Todo extends Component {
     axios.get(`${url}?sort=-createdAt${search}`).then(resp =>
       this.setState({
         ...this.state,
-        description: description,
+        description: description || "",
         list: resp.data
       })
     );
   }
 
   handleClearFilter() {
-    // this.setState({ ...this.state, description: "" });
     this.refresh();
   }
 
@@ -71,7 +70,7 @@ export default class Todo extends Component {
       <div>
         <Pageheader name="Tasks" small="Registers" />
         <TodoForm
-          value={this.state.description}
+          description={this.state.description}
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
           handleAdd={this.handleAdd}
